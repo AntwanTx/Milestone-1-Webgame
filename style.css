@@ -1,0 +1,24 @@
+
+body{
+    background-color: navy;
+}
+
+
+.nav{                                                                                                       
+    width: 90%;
+    flex: 1;
+    margin: auto;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+li{
+    display: inline-block;
+    color: red;
+    margin: 10px;
+    font-size: 40px;
+
+}
