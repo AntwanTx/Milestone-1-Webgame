@@ -1,24 +1,36 @@
-
 body{
-    background-color: navy;
-}
-
-
-.nav{                                                                                                       
-    width: 90%;
-    flex: 1;
-    margin: auto;
-    text-align: center;
-    align-content: center;
+    background-color: #57080ce7;
+    justify-content: center;
     align-items: center;
-    display: flex;
-    justify-content: space-evenly;
+    margin: 0;
 }
 
-li{
-    display: inline-block;
-    color: red;
-    margin: 10px;
-    font-size: 40px;
 
+nav{
+    border: 10px solid #d8d5e6;
+    width: 50%;
+    text-align: left;
+    align-content: left;
+    border-radius: 30%;
+    border-style:groove;
+    display: block;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    color: #0a8fad;
+    margin: 20px;
+    font-size: 30px;
+
+}
+
+nav ul li a{
+    color: #0a8fad;
+    font-size: 30px;
+}
+
+nav ul li a:hover{
+    color: rgb(255, 0, 0);
+    
 }

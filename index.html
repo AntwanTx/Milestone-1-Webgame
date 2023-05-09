@@ -5,18 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Snake Attack</title>
+    <title>Anaconda</title> 
 </head>
 <body>
-    <nav>
-      <ul>
+    <nav class="nav flex-column">
+    <ul>
           <li class="start">
             <a href>Let's Play!</a></li>
-          <li class="try-again">
-            <a href="index.html">Try Again</a></li>
-          <li>Time Left:</li>
+          <li>Time Left: 1:00</li>
+          <li>Score: 0</li>
         </ul>
     </nav>
-<script src="./app.js"></script>
+    <div id="snakepit"></div>
+    <div class="annie" style="grid-row-start: 5; grid-column-start: 5;"></div>
+    <div class="food" style="grid-row-start: 2; grid-column-end: 9;"></div>
+    <footer>
+      <h3>
+       <p> DIRECTIONS: With only 60 seconds on the clock help Annie the Anaconda eat as much food as psssible. Use the UP, DOWN, LEFT, and RIGHT arrow keys to move Annie towards the food. If you hit the borders or run into yourself, then its GAME OVER!!!
+        <img src="https://static.thenounproject.com/png/1616634-200.png" alt="Keyboard dircetional arrow key">
+      </p>
+      </h3>
+    </footer>
+  <script src="./app.js"></script>
 </body>
 </html>
