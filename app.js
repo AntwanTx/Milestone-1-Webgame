@@ -16,16 +16,55 @@ let food = { x:20, y:20 };
  *
  */
 function main(gameStart) {
-    window.requestAnimationFrame(main);
-if ((gameStart - timeClock)/1000 < 1 / speed) {
-    return;
+    console.log('gameStart:', gameStart);
+    console.log('timeClock:', timeClock);
+    console.log('speed:', speed);
+
+    play.requestAnimationFrame(main);
+
+    if ((gameStart - timeClock) / 1000 < 1 / speed) {
+        console.log('Time since last game loop is less than 1 / speed in seconds. Returning early.');
+        return;
+    }
+
+    timeClock = gameStart;
+    console.log('timeClock updated to:', timeClock);
+
+    gamePlay();
 }
-timeClock = gameStart;
-gamePlay();
+/**
+ * Updates the display with the remaining time
+ * @param {number} duration - The total duration of the timer in seconds
+ * @param {HTMLElement} display - The element to display the remaining time
+ */
+function timeLeft(duration, display){
+
+    let timer = duration, 
+        minutes, 
+        seconds;
+
+    setInterval(function(){
+        minutes = parseInt(timer/60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes <10 ? '0' + minutes : minutes;
+        seconds = seconds <10 ? '0' + seconds : seconds;
+
+        display.textContent =' ' + minutes + ':' + seconds;
+
+        if(--timer< 0){
+            alert("YOU LOSE, LET'S PLAY AGAIN!!")
+            location.reload();
+            timer = duration
+        }
+    },1000)
 }
 
-window.requestAnimationFrame(main);
-    window.addEventListener("keydown", function (e) {
+
+
+
+play.requestAnimationFrame(main);
+    play.addEventListener("keydown", function (e) {
     inputDirection = { x: 0, y: 1 };
     switch (e.key) {
     case "up pressed":
