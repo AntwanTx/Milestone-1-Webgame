@@ -12,15 +12,7 @@ _(A game of snake where growing your body is key without hitting edges or runnin
 
 ## Game Logic
 
-```
-XXX IMPORTANT! Replace all of this text with your own writing as you do these tasks/answer these questions THEN DELETE THIS LINE XXX
-
-The writing should describe in plain, simple language the logic of the game.
-Describe the logic involved in player decisions.
-  - What are the choices available to the player?
-  - What happens when the player makes a choice?
-Describe the logic that evaluates the player's victory/loss/progress status.
-```
+As the player, you will use the arrow keys on the keyboard to control the direction of the snake as you try to eat the food as it pops up. As you continue to eat the food, the snake will grow in size and move faster. The goal is to eat 10 pieces of food before the timer runs out. If the snake runs into itself or hits any of the 4 borders, then the game will end. You can click the "Let's Play" at anytime to resart the game. 
 
 ## Deliverables
 
@@ -33,20 +25,19 @@ Describe the logic that evaluates the player's victory/loss/progress status.
 
 ### MVP Criteria
 
-XXX IMPORTANT! Replace the text below as you list the MVP criteria you met AND THEN DELETE THIS LINE XXX
-
-- One thing my game must do to meet my minimum standard.
-- Another thing.
-- Etc.
-
+1. Have the game start with the click of the arrows
+2. The snake needs to move with whichever arrow is clicked
+3. Have the snake grow with every block of food eaten
+4. Have the snake move faster as the game progresses
+4. The timer must start as the game starts and end the game if it reaches 0:00
+5. A prompt stating if the player has won or lost depending on the outcome.
+6. The "Let's Play" link must return the game to the very beginning
 
 ### Post-MVP Plans
 
-XXX IMPORTANT! Replace the text below as you list what you would do to improve the game post-MVP AND THEN DELETE THIS LINE XXX
-
-- One great idea I hope to be able to add in before the project deadline.
-- Another that will be a stretch.
-- Something else I don't technically know how to do... *yet*. :)
+- I'd like to have music playing at the start of the game
+- Put in sound for either winning or losing the game
+- Add background picture to grid
 
 
 XXX IMPORTANT! USE THIS SPACE FOR THE SCHEDULE WE END UP MAKING IN CLASS AND ADD ANY PERSONAL INFO AS NEEDED. THE README IS NOT JUST A PLACE TO TELL OTHERS ABOUT THE CODE IN YOUR APP, BUT ALSO IT CAN BE A PART OF THE WAY YOU PLAN AND KEEP TRACK OF YOUR PROGRESS MAKING YOUR APP. BUT MAKE SURE TO DELETE ALL OF TEXT BELOW THIS LINE BEFORE YOU SUBMIT THE PROJECT FINALLY XXX
@@ -55,9 +46,9 @@ XXX IMPORTANT! USE THIS SPACE FOR THE SCHEDULE WE END UP MAKING IN CLASS AND ADD
 
 | Date | Goals |
 | ---- | ----- |
-| Mon. 2/13 | Create GitHub repository. Complete README.md. |
-| Wed. 2/15 |      |
-| Sat. 2/18 |      |
-| Mon. 2/20 |      |
-| Wed. 2/22 |      |
-| Sat. 2/25 | Deploy to GitHub Pages. Submit completed project. Project presentations. |
+| Mon. 5/1  | Create GitHub repository  |
+| Wed. 5/3  | Get html started          |
+| Sat. 5/6  | Finish html and start css |
+| Mon. 5/8  | Finsh css and start js    | 
+| Wed. 5/10 | Finsh js and README.md.   |
+| Sat. 5/11 | Deploy to GitHub Pages. Submit completed project. Project presentations. |
