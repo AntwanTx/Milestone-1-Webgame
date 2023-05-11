@@ -1,3 +1,4 @@
+/* design and styling for the page, navbar, grid, and snake  */
 body{
     background-color: #57080ce7;
     justify-content: center;
@@ -71,12 +72,12 @@ img{
     
 }
 .annie{
-    background-color: rgb(8, 8, 0);
+    background-color: limegreen;
     border: 2px solid #595953;
 }
 .annieHead{
-    background: limegreen
+    background-color: limegreen;
 }
 .food{
-    background-image: orange;
+    background-color: black
 }
