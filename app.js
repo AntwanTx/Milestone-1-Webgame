@@ -69,6 +69,22 @@ function changeDirection(event) {
 document.addEventListener("keydown", changeDirection);
  window.requestAnimationFrame(main);
 
+/*Checks whether the given Annie snake has collided with itself or the boundaries of the game board.*/
+function annieSelfDestruct(annie) {
+// Check if any segment of the Annie snake has collided with the head segment
+    for (let i = 1; i < anniePosition.length; i++) {
+        if (annie[i].x === annie[0].x && annie[i].y === annie[0].y) {
+            return true;
+        }
+    }
+// Check if the head segment has collided with the boundaries of the game board
+    if (annie[0].x >= 26 || annie[0].x <= 0 || annie[0].y >= 26 || annie[0].y <= 0){
+        return true;
+    }
+// If no collisions were detected, return false
+    return false;
+}
+
  /* Updates the game board with Annie's new position and the food element.
  * Checks for collisions with food and increments the score if a collision occurs.
  */
