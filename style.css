@@ -16,7 +16,7 @@ nav{
     display: block;
 }
 
-nav ul li{
+li{
     list-style: none;
     display: inline-block;
     color: #0a8fad;
@@ -25,13 +25,13 @@ nav ul li{
 
 }
 
-nav ul li a{
+a{
     color: #0a8fad;
     font-size: 30px;
 }
 
-nav ul li a:hover{
-    color: rgb(255, 0, 0);
+a:hover{
+    color: limegreen;
 
     
 }
@@ -41,13 +41,18 @@ h3 {
     color: #0a8fad;
     font-style: italic;
     font-family: Arial, Helvetica, sans-serif;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 img{
     display: block;
     margin-left: 40%;
 }
-
+#p{
+    padding-left: 10%;
+    padding-right: 30%;
+}
 #snakepit{
     background-size: 100%;
     background-position: center;
@@ -73,11 +78,12 @@ img{
 }
 .annie{
     background-color: limegreen;
+    flood-color: chartreuse;
     border: 2px solid #595953;
 }
 .annieHead{
     background-color: limegreen;
 }
 .food{
-    background-color: black
+    background-color: #ff00ff;
 }

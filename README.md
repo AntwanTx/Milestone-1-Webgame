@@ -41,6 +41,12 @@ As the player, you will use the arrow keys on the keyboard to control the direct
 
 ## Project Planning
 
+https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event
+
+https://www.w3schools.com/html/html_css.asp
+
+https://cordovav.github.io/Milestone-Browser-Game-VC/index.html
+
 | Date | Goals |
 | ---- | ----- |
 | Mon. 5/1  | Create GitHub repository  |

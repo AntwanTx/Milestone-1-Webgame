@@ -1,5 +1,5 @@
-const gameBoard = document.querySelector("#snakepit");
-const scoreBoard = document.querySelector("#score");
+const gameBoard = document.querySelector('#snakepit');
+const scoreBoard = document.querySelector('score');
 const gameStart = document.getElementsByClassName('start');
 
 let anniePosition = [{ x:11, y: 11 }];
@@ -15,14 +15,11 @@ let food = { x:20, y:20 };
  *
  */
 function main(gameStart) {
-    console.log('gameStart:', gameStart);
-    console.log('speed:', speed);
     window.requestAnimationFrame(main);
     if ((gameStart - timeClock) / 1000 < 1 / speed) {
         return;
     }
     timeClock = gameStart;
-    console.log('timeClock updated to:', timeClock);
     gamePlay();
 }
 /**
@@ -44,7 +41,7 @@ function timeLeft(duration, display){
         display.textContent =' ' + minutes + ':' + seconds;
 
         if(--timer< 0){
-            alert("YOU LOSE, CLICK LET'S PLAY!!")
+            alert("OH NO!! YOU LOSSSSSSSST!!!, CLICK LET'S PLAY!!")
             location.reload();
             timer = duration
         }
@@ -118,43 +115,32 @@ function gamePlay(){
     gameBoard.appendChild(foodElement);
 }
 /**
- * Moves Annie's position on the game board based on the arrow direction.
- * Updates the game board with Annie's new position and the food element.
- */
-function gamePlay(){
-    for (let i = anniePosition.length - 2; i >= 0; i--) {
-        anniePosition[i + 1] = { ...anniePosition[i] };
+ * This function updates the game play with each move of the snake, 
+ * and checks if the snake has collided with the food.
+    // Check if the snake has collided with the food */
+    if (anniePosition[0].y === food.y && anniePosition[0].x === food.x) {
+      // Increase the score by 1 and update the score board
+      score += 1;
+      scoreBoard.innerHTML = " " + score;
+  
+      // Add a new segment to the front of the snake
+      anniePosition.unshift({
+        x: anniePosition[0].x + arrowDirection.x,
+        y: anniePosition[0].y + arrowDirection.y,
+      });
+  
+      // Generate a new food location
+      let a = 2;
+      let b = 23;
+      food = {
+        x: Math.round(a + (b - a) * Math.random()),
+        y: Math.round(a + (b - a) * Math.random()),
+      };
+  
+      // If the score is 10, display a message and reload the page
+      if(score === 10 ){
+        alert("ANNIE IS FULL...WAY TO GO!!!");
+        location.reload();
+      }
     }
-
-    // Move Annie's position
-    anniePosition[0].x += arrowDirection.x;
-    anniePosition[0].y += arrowDirection.y;
-
-    // Clear the game board
-    gameBoard.innerHTML = "";
-
-    // Add Annie and the snake elements to the game board
-    anniePosition.forEach((e, index) => {
-        snakeElement = document.createElement("div");
-        snakeElement.style.gridRowStart = e.y;
-        snakeElement.style.gridColumnStart = e.x;
-        if (index === 0) {
-            // Annie's head
-            snakeElement.classList.add("annieHead");
-        } else {
-            // The rest of the snake
-            snakeElement.classList.add("annie");
-        }
-        gameBoard.appendChild(snakeElement);
-    });
-
-    // Add the food element to the game board
-    foodElement = document.createElement("div");
-    foodElement.style.gridRowStart = food.y;
-    foodElement.style.gridColumnStart = food.x;
-    foodElement.classList.add("food");
-    gameBoard.appendChild(foodElement);
-}
-
-
-
+    
