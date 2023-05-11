@@ -55,8 +55,9 @@ img{
     height: 500px;
     width: 500px ;
     text-align: center;
-    border:10px solid #0a8fad;
-    opacity: 0.5;
+    border: 10px solid #d8d5e6;
+    border-style: double;
+    opacity: 1;
     margin-top: 4px;    
     display: grid;
     grid-template-rows: repeat(25, 1fr);

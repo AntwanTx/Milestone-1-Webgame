@@ -8,7 +8,6 @@ let speed = 10;
 let score = 0;
 let timeClock = 0;
 let food = { x:20, y:20 };
-
 /**
  * Runs the main game loop using window.requestAnimationFrame. If the time since the last
  * game loop is less than 1 / speed in seconds, return early. Otherwise, update the timeClock
@@ -17,26 +16,18 @@ let food = { x:20, y:20 };
  */
 function main(gameStart) {
     console.log('gameStart:', gameStart);
-    console.log('timeClock:', timeClock);
     console.log('speed:', speed);
-
-    play.requestAnimationFrame(main);
-
+    window.requestAnimationFrame(main);
     if ((gameStart - timeClock) / 1000 < 1 / speed) {
-        console.log('Time since last game loop is less than 1 / speed in seconds. Returning early.');
         return;
     }
-
     timeClock = gameStart;
     console.log('timeClock updated to:', timeClock);
-
     gamePlay();
 }
 /**
  * Updates the display with the remaining time
- * @param {number} duration - The total duration of the timer in seconds
- * @param {HTMLElement} display - The element to display the remaining time
- */
+  */
 function timeLeft(duration, display){
 
     let timer = duration, 
@@ -53,40 +44,117 @@ function timeLeft(duration, display){
         display.textContent =' ' + minutes + ':' + seconds;
 
         if(--timer< 0){
-            alert("YOU LOSE, LET'S PLAY AGAIN!!")
+            alert("YOU LOSE, CLICK LET'S PLAY!!")
             location.reload();
             timer = duration
         }
     },1000)
 }
-
-
-
-
-play.requestAnimationFrame(main);
-    play.addEventListener("keydown", function (e) {
-    inputDirection = { x: 0, y: 1 };
-    switch (e.key) {
-    case "up pressed":
-    inputDirection.x = 0;
-    inputDirection.y = -1;
-        break;
-
-    case "down pressed":
-    inputDirection.x = 0;
-    inputDirection.y = 1;
-        break;
-
-    case "left pressed":
-    inputDirection.x = -1;
-    inputDirection.y = 0;
-        break;
-
-    case "right pressed":
-    inputDirection.x = 1;
-    inputDirection.y = 0;
-        break;
-    default:
-        break;
+/**
+ * Starts a timer for one minute and displays the remaining time on the screen
+ */
+function countDown() {
+    let oneMinute = 60; // the duration of the timer in seconds
+    let display = document.querySelector("#time-left"); // the element where the remaining time is displayed
+    timeLeft(oneMinute, display); // start the timer
+}
+countDown()
+/*
+ * Moves Annie's position on the game board based on the arrow direction.
+ * Changes the arrow direction based on the key pressed.
+ */
+function changeDirection(event) {
+    switch (event.key) {
+        case "ArrowUp":
+            arrowDirection = { x: 0, y: -1 };
+            break;
+        case "ArrowDown":
+            arrowDirection = { x: 0, y: 1 };
+            break;
+        case "ArrowLeft":
+            arrowDirection = { x: -1, y: 0 };
+            break;
+        case "ArrowRight":
+            arrowDirection = { x: 1, y: 0 };
+            break;
     }
-});
+}
+document.addEventListener("keydown", changeDirection);
+ window.requestAnimationFrame(main);
+
+ /* Updates the game board with Annie's new position and the food element.
+ */
+function gamePlay(){
+    for (let i = anniePosition.length - 2; i >= 0; i--) {
+        anniePosition[i + 1] = { ...anniePosition[i] };
+        }
+    // Move Annie's position
+    anniePosition[0].x += arrowDirection.x;
+    anniePosition[0].y += arrowDirection.y;
+
+    // Clear the game board
+    gameBoard.innerHTML = "";
+
+    // Add Annie and the snake elements to the game board
+    anniePosition.forEach((e, index) => {
+        snakeElement = document.createElement("div");
+        snakeElement.style.gridRowStart = e.y;
+        snakeElement.style.gridColumnStart = e.x;
+        if (index === 0) {
+            // Annie's head
+            snakeElement.classList.add("annieHead");
+        } else {
+            // The rest of the snake
+            snakeElement.classList.add("annie");
+        }
+        gameBoard.appendChild(snakeElement);
+    });
+
+    // Add the food element to the game board
+    foodElement = document.createElement("div");
+    foodElement.style.gridRowStart = food.y;
+    foodElement.style.gridColumnStart = food.x;
+    foodElement.classList.add("food");
+    gameBoard.appendChild(foodElement);
+}
+/**
+ * Moves Annie's position on the game board based on the arrow direction.
+ * Updates the game board with Annie's new position and the food element.
+ */
+function gamePlay(){
+    for (let i = anniePosition.length - 2; i >= 0; i--) {
+        anniePosition[i + 1] = { ...anniePosition[i] };
+    }
+
+    // Move Annie's position
+    anniePosition[0].x += arrowDirection.x;
+    anniePosition[0].y += arrowDirection.y;
+
+    // Clear the game board
+    gameBoard.innerHTML = "";
+
+    // Add Annie and the snake elements to the game board
+    anniePosition.forEach((e, index) => {
+        snakeElement = document.createElement("div");
+        snakeElement.style.gridRowStart = e.y;
+        snakeElement.style.gridColumnStart = e.x;
+        if (index === 0) {
+            // Annie's head
+            snakeElement.classList.add("annieHead");
+        } else {
+            // The rest of the snake
+            snakeElement.classList.add("annie");
+        }
+        gameBoard.appendChild(snakeElement);
+    });
+
+    // Add the food element to the game board
+    foodElement = document.createElement("div");
+    foodElement.style.gridRowStart = food.y;
+    foodElement.style.gridColumnStart = food.x;
+    foodElement.classList.add("food");
+    gameBoard.appendChild(foodElement);
+}
+
+
+
