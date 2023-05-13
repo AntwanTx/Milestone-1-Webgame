@@ -19,6 +19,10 @@ function main(gameStart) {
     timeClock = gameStart;
     gamePlay();
 }
+let timerStarted = false;
+
+
+
 /*Updates the display with the remaining time*/
 function timeLeft(duration, display){
 
@@ -36,7 +40,7 @@ function timeLeft(duration, display){
         display.textContent =' ' + minutes + ':' + seconds;
 
         if(--timer< 0){
-            alert("OH NO!! YOU LOSSSSSSSST!!!, CLICK LET'S PLAY!!")
+            alert("OH NO!! YOU LOSSSSSSSST!!!, LET'S PLAY AGAIN!!")
             location.reload();
             timer = duration
         }
@@ -142,7 +146,7 @@ function gamePlay(){
         };
 
         // If the score is 10, display a message and reload the page
-        if(score === 10 ){
+        if(score === 15 ){
             alert("ANNIE IS FULL...WAY TO GO!!!");
             location.reload();
         }
@@ -151,7 +155,7 @@ function gamePlay(){
     // Check for collisions
     if (annieSelfDestruct(anniePosition)) {
         arrowDirection = { x: 0, y: 0 }; // Reset arrow direction.
-        alert("GAME OVER!!"); // Display game over message.
+        alert("OH NO!! YOU LOSSSSSSSST!!!, LET'S PLAY AGAIN!!"); // Display game over message.
         location.reload(); // Reload the page.
         anniePosition = [{ x: 11, y: 11}]; // Reset Annie's position.
         score = 0; // Reset the score.

@@ -14,15 +14,6 @@ _(A game of snake where growing your body is key without hitting edges or runnin
 
 As the player, you will use the arrow keys on the keyboard to control the direction of the snake as you try to eat the food as it pops up. As you continue to eat the food, the snake will grow in size and move faster. The goal is to eat 10 pieces of food before the timer runs out. If the snake runs into itself or hits any of the 4 borders, then the game will end. You can click the "Let's Play" at anytime to resart the game. 
 
-## Deliverables
-
->Even if you have a great big idea for a game, it's important to scope this project according to what you can get done in the next two weeks. We'll refer to your project completion goal using the term **[Minimum Viable Product](https://en.wikipedia.org/wiki/Minimum_viable_product) (MVP)** -- a list of the criteria needed to "ship" a playable version of your game that meets the project requirements.
->
->*Don't lose sight of your big ideas, though! Keep a list of further improvements you can refer to as **Post-MVP Ideas**. You might finish some before our project time is done, or you might work on them later!*
->
-> For your README, delete this blockquote and fill in the lists below.
-
-
 ### MVP Criteria
 
 1. Have the game start with the click of the arrows
@@ -33,12 +24,6 @@ As the player, you will use the arrow keys on the keyboard to control the direct
 5. A prompt stating if the player has won or lost depending on the outcome.
 6. The "Let's Play" link must return the game to the very beginning
 
-### Post-MVP Plans
-
-- I'd like to have music playing at the start of the game
-- Put in sound for either winning or losing the game
-- Add background picture to grid
-
 ## Project Planning
 
 https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event
@@ -46,6 +31,10 @@ https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event
 https://www.w3schools.com/html/html_css.asp
 
 https://cordovav.github.io/Milestone-Browser-Game-VC/index.html
+
+https://stackoverflow.com/questions/28411499/disable-scrolling-on-body
+
+https://docs.google.com/document/d/1iQaOaqja2osKj2gHuhgcBasvtpiYY-_zcpjBv6iQ6_c/edit
 
 | Date | Goals |
 | ---- | ----- |
